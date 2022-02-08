@@ -73,13 +73,12 @@ describe('tests', () => {
 
   it('tasks with populated persons, persons have name', async () => {
     const tasks = await em.find(TaskEntity, {}, { populate: ['person'], orderBy: { id: 'asc'}});
-    expect(tasks[0].person.id).toEqual(0);
-    expect(tasks[0].person.name).toEqual('zero');
 
     expect(tasks[1].person.id).toEqual(1);
     expect(tasks[1].person.name).toEqual('one');
-
     expect(tasks[2].person.id).toEqual(2);
     expect(tasks[2].person.name).toEqual('two');
+    expect(tasks[0].person.id).toEqual(0);
+    expect(tasks[0].person.name).toEqual('zero');
   });
 });
