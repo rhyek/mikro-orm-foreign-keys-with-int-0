@@ -45,7 +45,7 @@ describe('tests', () => {
   });
 
   beforeEach(() => {
-    em = orm.em.fork(true);
+    em = orm.em.fork({ clear: true });
   });
 
   it('persons exist', async () => {
